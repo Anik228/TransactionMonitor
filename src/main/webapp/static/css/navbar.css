@@ -1,0 +1,87 @@
+/* ═══════════════════════════════════════════
+   navbar.css  —  Top navigation bar styles
+   ═══════════════════════════════════════════ */
+
+.navbar-custom {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand-custom {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.navbar-brand-custom:hover {
+    color: var(--accent);
+}
+
+.brand-icon {
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, #58a6ff, #10b981);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.nav-live-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    background: rgba(88, 166, 255, 0.15);
+    color: var(--accent);
+    border: 1px solid rgba(88, 166, 255, 0.3);
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+.navbar-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-meta-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: livePulse 2s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes livePulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(1.4); }
+}
+
+/* responsive: collapse meta on small screens */
+@media (max-width: 576px) {
+    .navbar-custom {
+        padding: 0.6rem 1rem;
+    }
+    .navbar-meta-item.d-sm-none-custom {
+        display: none;
+    }
+}

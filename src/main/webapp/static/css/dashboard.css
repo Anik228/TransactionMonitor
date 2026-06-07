@@ -1,0 +1,68 @@
+/* ═══════════════════════════════════════════
+   dashboard.css  —  Page-level layout & global CSS variables
+   ═══════════════════════════════════════════ */
+
+/* ── global design tokens ── */
+:root {
+    --bg-dark:      #0d1117;
+    --bg-card:      #161b22;
+    --bg-card2:     #1c2333;
+    --border-color: #30363d;
+    --text-primary: #e6edf3;
+    --text-muted:   #7d8590;
+    --accent:       #58a6ff;
+}
+
+/* ── reset & base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: 'Sora', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* ── main content wrapper ── */
+.main-content {
+    padding: 1.75rem 2rem;
+}
+
+/* ── page heading row ── */
+.page-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ── section label (divider with label) ── */
+.section-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+}
+
+/* ── responsive gutter adjustments ── */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+}
