@@ -17,6 +17,8 @@ import java.util.stream.Collectors;
 @Controller
 public class DashboardController {
 
+    //dashboard main page
+
     @Autowired
     private TransactionService transactionService;
 
